@@ -1,6 +1,6 @@
 
 describe('New employee required fields validation', () => {
-    it('Valida um campo obrigatório', () => {
+    it('validates new employee required fields', () => {
     
         cy.login()
         cy.get('.oxd-brand-banner > img').should('be.visible', 'Título')

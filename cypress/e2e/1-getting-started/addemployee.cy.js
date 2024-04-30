@@ -1,9 +1,9 @@
 import { faker } from '@faker-js/faker';
 
-describe('Add funcionario', () => {
-    it('Adiciona um funcionario', () => {
-
-        cy.login()
+describe('Add employee', () => {
+    it('adds an employee', () => {
+        
+        cy.login("Admin", "admin123")
         cy.get('.oxd-brand-banner > img').should('be.visible', 'Título')
         cy.get(':nth-child(2) > .oxd-main-menu-item').click()
         cy.get('.orangehrm-header-container > .oxd-button').click()
@@ -11,8 +11,8 @@ describe('Add funcionario', () => {
         cy.get(':nth-child(2) > :nth-child(2) > .oxd-input').type(faker.person.middleName())
         cy.get(':nth-child(3) > :nth-child(2) > .oxd-input').type(faker.person.lastName())
         cy.get('.oxd-grid-item > .oxd-input-group > :nth-child(2) > .oxd-input').type(faker.number.int(10))
-        cy.get('.oxd-button--secondary').click()
-        cy.get(':nth-child(1) > .oxd-form > .oxd-form-actions > .oxd-button').click()
+       //cy.get('.oxd-button--secondary').click()
+        cy.contains('Save').click()
         
     })
 
